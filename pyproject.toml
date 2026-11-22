@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "related-messages-lab"
+version = "0.1.0"
+description = "A safe, reproducible toy demonstration of the Franklin-Reiter RSA related-message attack"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Jishnu M" }]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+related-messages = "related_messages:main"
+
+[tool.setuptools]
+py-modules = ["related_messages"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
